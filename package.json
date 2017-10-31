@@ -1,0 +1,20 @@
+{
+  "name": "forNiece",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llz383455526/forNiece.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llz383455526/forNiece/issues"
+  },
+  "homepage": "https://github.com/llz383455526/forNiece#readme"
+}
