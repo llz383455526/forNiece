@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,23 @@
     <title>计算器01</title>
 </head>
 <body>
-    
+    <input type="text" name="number1">
+    <input type="text" name="number2">
+    <button id="btnAdd">加法运算</button>
+
+    <p>结果：<span id="result"></span></p>
+
+    <script>
+        var number1 = document.querySelector("input[name='number1']");
+        var number2 = document.querySelector("input[name='number2']");
+        var btnAdd = document.querySelector('#btnAdd');
+        var result = document.querySelector("#result");
+
+        btnAdd.onclick = function(){
+            var _result = number1.value+number2.value;
+            result.innerHTML=_result;
+        }
+
+    </script>
 </body>
 </html>
