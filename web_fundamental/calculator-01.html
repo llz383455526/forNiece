@@ -1,28 +1,86 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>计算器01</title>
+
+    <style>
+            .btn {
+                
+            }
+    </style>
 </head>
 <body>
     <input type="text" name="number1">
     <input type="text" name="number2">
-    <button id="btnAdd">加法运算</button>
+    <button id="btnAdd" class="btn">加法运算</button>
+    <button id="btnSub" class="btn">减法运算</button>
+    <button id="btnMul" class="btn">乘法运算</button>
+    <button id="btnDiv" class="btn">除法运算</button>
 
     <p>结果：<span id="result"></span></p>
 
     <script>
         var number1 = document.querySelector("input[name='number1']");
         var number2 = document.querySelector("input[name='number2']");
+        var body = document.body;
         var btnAdd = document.querySelector('#btnAdd');
+        var btnSub = document.querySelector('#btnSub');
+        var btnMul = document.querySelector('#btnMul');
+        var btnDiv = document.querySelector('#btnDiv');
         var result = document.querySelector("#result");
 
-        btnAdd.onclick = function(){
-            var _result = number1.value+number2.value;
-            result.innerHTML=_result;
+        var num1,num2;
+        
+        /**每个按钮设置事件监听**/
+        // btnAdd.onclick = function(){
+        //     getNumber();
+        //     var _result = num1+num2;
+        //     result.innerHTML=_result;
+        // }
+        // btnSub.onclick = function(){
+        //     getNumber();
+        //     var _result = num1-num2;
+        //     result.innerHTML=_result;
+        // }
+        // btnMul.onclick = function(){
+        //     getNumber();
+        //     var _result = num1*num2;
+        //     result.innerHTML=_result;
+        // }
+        // btnDiv.onclick = function(){
+        //     getNumber();
+        //     var _result = num1/num2;
+        //     result.innerHTML=_result;
+        // }
+
+        function getNumber(){
+            num1 = Number(number1.value);
+            num2 = Number(number2.value);
         }
+
+        body.addEventListener("click",function(event){      //通过事件代理简化代码
+            
+            if(!event.target.id) return;        //不处理输入框点击事件。输入框没有设置id
+
+            getNumber();
+            var targetId = event.target.id;
+            var _result;
+            if(targetId=='btnAdd'){
+                _result = num1+num2;
+            }else if(targetId=='btnSub'){
+                _result = num1-num2;
+            }else if(targetId=='btnMul'){
+                _result = num1*num2;
+            }else if(targetId=='btnDiv'){
+                _result = num1/num2;
+            }
+
+            result.innerHTML=_result;
+        })
+
 
     </script>
 </body>
